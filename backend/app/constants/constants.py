@@ -1,0 +1,1 @@
+# Have constants here that might be good to store (e.g. prompts for stuff)
