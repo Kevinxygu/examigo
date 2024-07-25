@@ -1,0 +1,37 @@
+﻿General Topic,Testable Topics
+Excel Data Types,"How numbers are formatted in Excel, logical values in Excel, text in Excel"
+IF FUNCTION,Questions around using the Excel IF Function
+Cell References,"Questions around absolute referencing, relative referencing, mixed referencing"
+MAX Function,Questions around the MAX function in Excel
+MIN Function,Questions around the MIN function in Excel
+SUM Function,Questions around the SUM function in Excel
+AVERAGE Function,Questions around the AVERAGE function in Excel
+"AND, OR and NOT Function","Questions around the usage and evaluation of AND, OR and NOT functions"
+COUNTIF and COUNTIFS Functions,Questions around the COUNTIF and COUNTIFS functions and different applications to use the function in
+SUMIF and SUMIFS Functions,Questions around the SUMIF and SUMIFS functions and different applications to use the function in
+VLOOKUP,"Questions around how to use VLOOKUP properly, difference between setting last argument to TRUE vs FALSE, testing how to set up the VLOOKUP table itself, and bugs around the VLOOKUP table"
+INDEX Function,Questions around how to use the INDEX function
+MATCH Function,Questions around how to use the MATCH function.
+MATCH and INDEX together,Questions and applications on how to combine the MATCH and INDEX functions together in Excel
+"LEFT, RIGHT, MID Functions","How to use the LEFT, RIGHT, and MID functions to manipulate text in Excel. Challenging problems around manipulation of text"
+CONCATENATE Function,How to use the CONCATENATE function to generate dynamic strings
+LEN Function,How to use the LEN function to solve problems in Excel
+TRIM Function,Questions around the TRIM function in Excel
+SUBSTITUTE Function,How to use the SUBSTITUTE function to solve problems in Excel
+REPLACE Function,How to use the REPLACE function in conjunction with other Excel functions to solve complex problems in Excel
+FIND Function,"Questions around the FIND function, how it works, and how to use it to solve complex problems in Excel with other functions"
+SEARCH Function,"Questions around the SEARCH function, how it works,how it's different from the FIND function and how to use it to solve complex problems in Excel with other functions"
+SEARCH Function Wildcards,"How to use wildcard values in Excel, for the SEARCH function"
+"R functions, case sensitivity and usage","High-level knowledge about the R language, how to call assignments, case sensitivity around variables and data, etc."
+R Data types and coercion,"Questions around R data types, how the types are coerced. Questions around the type of certain vectors when different types are added to them, implicit coercion when you use different types together, etc."
+Logical Comparisons,"The orderand precedence of logical operations with not, and and or logical operators"
+Vectors,"Questions around operating on vectors in R, applying vectors to solve R problems, using vectors in problems with atomic values on the other side of an operator, implicit coercion with vectors, aggregate functions like sd, sum, mean, etc."
+which() function in R,How to use the which() function in R to solve R problems
+DataFrames and NA in R,"Questions around the tidyverse library, dataframes in R and tibble. How to handle NA when working with dataframes, aggregate functions like mean, sum, sd, etc. "
+Data Wrangling,"Using the dplyr and magrittr functions like select, summarise, filter, mutate to solve complex R problems and apply them to R datasets and dataframes"
+group_by() Function,Using the group_by() function in R to solve R problems
+if_else Function,How to use the if_else function to solve R problems
+arrange(),How to use the arrange() function to solve R problems
+unique identifiers and composite keys in R dataframes,How to format R dataframes to include a primary key or composite keys to effectively handle join operations like inner_join and left_join
+Left_join and Inner_join functions,"Questions around the difference between left_join and inner_join functions, when to use either case, and how to use it to solve problems"
+duplicated(),Questions around using the duplicated() function in R
