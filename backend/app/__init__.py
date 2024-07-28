@@ -1,5 +1,6 @@
 # initialization file for configuring Flask application.
 # Sets up database, registers the blueprints, and all the necessary extensions
+from .routes import auth, problems
 
 
 # Central set up point
@@ -16,8 +17,15 @@ def create_app():
     # Initialize database (TODO)
 
     # register all the blueprints (TODO)
+    app.register_blueprint(auth.bp)
+    app.register_blueprint(problems.bp)
     """
     BLUEPRINTS are like differnet components of the backend. it splits up the app into sets/groups of code to re-use and keep separate
     """
 
     return app
+
+app = create_app()
+
+if __name__ == "__main__":
+    app.run(port=8000, debug=True)

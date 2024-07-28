@@ -8,7 +8,9 @@ bp = Blueprint('problems', __name__, url_prefix='/problems')
 def get_problems():
     # this is to get the problems from DB
     # TODO implement logic to fetch problems from the database
-    return jsonify({"problems": "Hello World!!!"}), 200 
+    print("Get the problems now!")
+    return '<p>GET PROBLEMS HERE</p>'
+    # return jsonify({"problems": "Hello World!!!"}), 200 
 
 @bp.route('/generate', methods=['POST'])
 def create_problem():

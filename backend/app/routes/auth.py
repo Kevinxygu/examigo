@@ -7,12 +7,19 @@ import firebase_admin
 from firebase_admin import credentials
 
 bp = Blueprint('auth', __name__, url_prefix='/auth')
-cred = credentials.Certificate("../secrets/firebase-auth.json")
+cred = credentials.Certificate("./secrets/firebase-auth.json")
 firebase_admin.initialize_app(cred)
 
-@bp.route('/login', methods=['POST]'])
+@bp.route('/login', methods=['GET', 'POST'])
 def login():
-    # This route can handle the user login and faciliates the API call to log the person in
-    data = request.json # this is the payload from the user
-
-    # TODO: You would usually have ur login logic here. 
+    if request.method == 'POST':
+        # Handle the POST request
+        data = request.json  # this is the payload from the user
+        print("Logging in!")
+        # TODO: Implement your login logic here.
+        return '<p>Login action</p>', 200
+    else:
+        # Handle the GET request
+        print("Displaying login page!")
+        # TODO: Implement the logic to display the login page.
+        return '<p>Login page here</p>', 200
