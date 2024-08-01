@@ -29,4 +29,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
 
+console.log(process.env.TEST_ENV); // This should print out 'Hello World!' in the console
+
 export { app };
