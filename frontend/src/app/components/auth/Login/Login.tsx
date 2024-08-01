@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from "react";
 
 const Login = () => {
@@ -11,3 +13,5 @@ const Login = () => {
   )
 
 }
+
+export default Login;
