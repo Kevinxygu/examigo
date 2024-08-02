@@ -22,4 +22,4 @@ def login():
         # Handle the GET request
         print("Displaying login page!")
         # TODO: Implement the logic to display the login page.
-        return '<p>Login page here</p>', 200
+        return jsonify(message="Login page is displayed"), 200

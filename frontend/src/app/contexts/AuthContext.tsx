@@ -1,3 +1,5 @@
+"use client"
+
 // Import code to create a context for authentication
 import React, {createContext, useContext, useEffect, useState} from "react";
 import { onAuthStateChanged, getAuth, signOut, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
