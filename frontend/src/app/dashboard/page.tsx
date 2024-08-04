@@ -6,6 +6,7 @@ import * as Styled from "./Dashboard.styles";
 import Header from "../components/layout/Header";
 import { useAuth } from "../contexts/AuthContext";
 import { redirect } from "next/navigation";
+import Link from "next/link";
 
 interface Question {
     questionTitle: string;
@@ -76,6 +77,9 @@ const HelloWorld = () => {
     return (
     <>
     <Header />
+        <Link href="/dashboard/generate">
+            + Generate
+        </Link>
         {questions && questions.length > 0 ? hasQuestionsBlock : emptyQuestionsBlock}
     </>
   );

@@ -8,12 +8,16 @@ import { app } from "../config/configAuth";
 // Types from firebase
 import { User } from "firebase/auth";
 
+// Sign in with Google functionality
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+
 // Define the types for the context
 interface AuthContextType {
     user: User | null;
     login: (email: string, password: string) => Promise<UserCredential>;
     logout: () => Promise<void>;
     signup: (email: string, password: string) => Promise<UserCredential>;
+    googleSignIn: () => Promise<UserCredential>; // Sign in with Google
 }
 
 // Create the context
@@ -63,13 +67,20 @@ export const AuthProvider = ({children}: {children: React.ReactNode}) => {
         const auth = getAuth(app);
         return createUserWithEmailAndPassword(auth, email, password);
     }
-    
+
+    const googleSignIn = async () => {
+        const auth = getAuth(app);
+        const provider = new GoogleAuthProvider();
+        return signInWithPopup(auth, provider);
+    }
+
     // This is the value that we will provide to the app
     const value = {
         user,
         login,
         logout,
-        signup
+        signup,
+        googleSignIn
     }
     
     return (

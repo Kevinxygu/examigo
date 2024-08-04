@@ -9,7 +9,7 @@ const Login  = () => {
     // states
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const { login, logout } = useAuth(); // This is the auth context passed down from the highest context
+    const { login, logout, googleSignIn } = useAuth(); // This is the auth context passed down from the highest context
 
     // Handle login button click
     const handleLogin = async() => {
@@ -30,6 +30,17 @@ const Login  = () => {
             alert("Logged out successfully");
         } catch (error) {
             alert("There was an error" + error)
+        }
+    };
+
+    // Handle sign-in with Google
+    const handleGoogleSignIn = async() => {
+        try {
+            // log in
+            await googleSignIn();
+            alert("Successfully signed in with Google");
+        } catch (error) {
+            alert("Unsuccessful login with error: " + error);
         }
     };
 
@@ -62,6 +73,8 @@ const Login  = () => {
         
               <Styled.LoginButton onClick={handleLogin}>Login</Styled.LoginButton>
               <Styled.LogoutButton onClick={handleLogout}>Logout</Styled.LogoutButton>
+              <Styled.GoogleButton onClick={handleGoogleSignIn}>Logout</Styled.GoogleButton>
+
             </Styled.LoginContainer>
           </>
           )

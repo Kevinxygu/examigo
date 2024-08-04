@@ -9,7 +9,7 @@ const Login  = () => {
     // states
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const { signup } = useAuth(); // This is the auth context passed down from the highest context
+    const { signup, googleSignIn } = useAuth(); // This is the auth context passed down from the highest context
 
     // Handle login button click
     const handleSignUp = async() => {
@@ -17,6 +17,17 @@ const Login  = () => {
             // log in
             await signup(email, password);
             alert("Successfully signed up for account with email: " + email);
+        } catch (error) {
+            alert("Unsuccessful login with error: " + error);
+        }
+    };
+
+    // Handle sign-in with Google
+    const handleGoogleSignIn = async() => {
+        try {
+            // log in
+            await googleSignIn();
+            alert("Successfully signed in with Google");
         } catch (error) {
             alert("Unsuccessful login with error: " + error);
         }
@@ -50,6 +61,7 @@ const Login  = () => {
               <br />
         
               <Styled.LoginButton onClick={handleSignUp}>Create Account</Styled.LoginButton>
+              <Styled.GoogleButton onClick={handleGoogleSignIn}>Sign in with Google</Styled.GoogleButton>
             </Styled.LoginContainer>
           </>
           )

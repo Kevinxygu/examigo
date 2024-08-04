@@ -29,3 +29,8 @@ export const LoginButton = styled.button`
 export const LogoutButton = styled.button`
   /* Add styles for logoutButton if any */
 `;
+
+export const GoogleButton = styled.button`
+    /* Add styles for googleButton if any */
+
+`;
