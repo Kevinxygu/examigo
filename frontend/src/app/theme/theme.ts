@@ -1,5 +1,3 @@
-import { Linden_Hill } from "next/font/google";
-
 export const colors = {
     // light blue
     lightblue: "#A8B7D0",
