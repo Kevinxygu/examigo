@@ -77,7 +77,7 @@ def get_problems():
             
         ]
     }
-    return jsonify(sampleResponseEmpty), 200 
+    return jsonify(sampleResponseFull), 200 
 
 @bp.route('/generate', methods=['POST'])
 def create_problem():
