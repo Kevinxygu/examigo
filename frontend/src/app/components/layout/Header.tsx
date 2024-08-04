@@ -21,6 +21,11 @@ const Header = () => {
         Login Page
         </Styled.StyledLink>
 
+
+        <Styled.StyledLink href="/dashboard">
+        Dashboard
+        </Styled.StyledLink>
+
         <Styled.StyledLink href="/signup">
         Sign Up
         </Styled.StyledLink>
