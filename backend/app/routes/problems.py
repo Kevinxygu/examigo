@@ -10,7 +10,7 @@ def get_problems():
     # TODO implement logic to fetch problems from the database
 
     # current sample response
-    sampleResponse = {
+    sampleResponseFull = {
         "name": "Sample Name",
         "problems": [
             {
@@ -70,7 +70,14 @@ def get_problems():
             }
         ]
     }
-    return jsonify(sampleResponse), 200 
+
+    sampleResponseEmpty = {
+        "name": "Sample Name",
+        "problems": [
+            
+        ]
+    }
+    return jsonify(sampleResponseEmpty), 200 
 
 @bp.route('/generate', methods=['POST'])
 def create_problem():

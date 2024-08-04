@@ -69,35 +69,14 @@ const HelloWorld = () => {
 
     const emptyQuestionsBlock = (
         <div>
-            <h2>There are no questions available</h2>
+            <h2>No questions :((((((((((((</h2>
         </div>
     );
 
     return (
     <>
     <Header />
-        {questions &&
-        questions.map((object, index) => {
-            return (
-                <div key={index}>
-                    <h2>{object.testName}</h2>
-                    {object.questions.map((question, index) => {
-                        return (
-                            <div key={index}>
-                                <h3>{question.questionTitle}</h3>
-                                <p>{question.questions1}</p>
-                                <p>{question.questions2}</p>
-                                <p>{question.questions3}</p>
-                                <p>{question.questions4}</p>
-                                <p>{question.questions5}</p>
-                                <p>{question.correctAnswer}</p>
-                            </div>
-                        );
-                    })}
-                </div>
-            );
-        })}
-      Dashboard
+        {questions && questions.length > 0 ? hasQuestionsBlock : emptyQuestionsBlock}
     </>
   );
 };
