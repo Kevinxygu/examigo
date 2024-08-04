@@ -1,35 +1,24 @@
 'use client'
 
 import React, { useState } from 'react';
-import { useAuth } from '../../contexts/AuthContext';
-import * as Styled from './Login.styles';
-import Header from '@/app/components/layout/Header';
+import { useAuth } from '../contexts/AuthContext';
+import * as Styled from './Signup.styles';
+import Header from '../components/layout/Header';
 
 const Login  = () => {
     // states
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const { login, logout } = useAuth(); // This is the auth context passed down from the highest context
+    const { signup } = useAuth(); // This is the auth context passed down from the highest context
 
     // Handle login button click
-    const handleLogin = async() => {
+    const handleSignUp = async() => {
         try {
             // log in
-            await login(email, password);
-            alert("Logged in successfully");
+            await signup(email, password);
+            alert("Successfully signed up for account with email: " + email);
         } catch (error) {
             alert("Unsuccessful login with error: " + error);
-        }
-    };
-
-    // Handle logout
-    const handleLogout = async() => {
-        try {
-            // log out
-            await logout();
-            alert("Logged out successfully");
-        } catch (error) {
-            alert("There was an error" + error)
         }
     };
 
@@ -60,8 +49,7 @@ const Login  = () => {
         
               <br />
         
-              <Styled.LoginButton onClick={handleLogin}>Login</Styled.LoginButton>
-              <Styled.LogoutButton onClick={handleLogout}>Logout</Styled.LogoutButton>
+              <Styled.LoginButton onClick={handleSignUp}>Create Account</Styled.LoginButton>
             </Styled.LoginContainer>
           </>
           )

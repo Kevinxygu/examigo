@@ -10,10 +10,24 @@ const Header = () => {
   const { user } = useAuth();
   return (
     <Styled.HeaderContainer>
+       <Styled.StyledLink href="/">
+        Home
+        </Styled.StyledLink>
         <Styled.StyledLink href="/helloworld">
         Hello World!
         </Styled.StyledLink>
-        <p>{user ? user.email : 'Not logged in'}</p>
+
+        <Styled.StyledLink href="/auth/login">
+        Login Page
+        </Styled.StyledLink>
+
+        <Styled.StyledLink href="/signup">
+        Sign Up
+        </Styled.StyledLink>
+
+        {/* This will show the user email if they are logged in */}
+        <p>{`User: ${user ? user.email : 'Not logged in'}`}</p>
+
     </Styled.HeaderContainer>
   );
 }

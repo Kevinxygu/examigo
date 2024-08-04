@@ -17,4 +17,8 @@ margin: 15px;
 export const HeaderContainer = styled.div`
 width: 100%;
 background-color: red;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 15px;
 `;
