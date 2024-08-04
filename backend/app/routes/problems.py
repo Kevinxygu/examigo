@@ -71,6 +71,7 @@ def get_problems():
         ]
     }
 
+    # Use this if you want to test out an empty list and how that's handled on the dashboard page
     sampleResponseEmpty = {
         "name": "Sample Name",
         "problems": [
