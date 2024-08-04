@@ -2,18 +2,32 @@
 
 // Import code to create a context for authentication
 import React, {createContext, useContext, useEffect, useState} from "react";
-import { onAuthStateChanged, getAuth, signOut, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
+import { onAuthStateChanged, getAuth, signOut, signInWithEmailAndPassword, createUserWithEmailAndPassword, UserCredential } from "firebase/auth";
 import { app } from "../config/configAuth";
 
-// Types
+// Types from firebase
 import { User } from "firebase/auth";
 
+// Define the types for the context
+interface AuthContextType {
+    user: User | null;
+    login: (email: string, password: string) => Promise<UserCredential>;
+    logout: () => Promise<void>;
+    signup: (email: string, password: string) => Promise<UserCredential>;
+}
+
 // Create the context
-const AuthContext = createContext({});
+const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 // Create a hook to use the context
-export const useAuth = () => {
-  return useContext(AuthContext);
+export const useAuth = (): AuthContextType => {
+    // get the context here
+    const context = useContext(AuthContext);
+    if (!context) {
+        throw new Error("useAuth must be used within an AuthProvider");
+    }
+
+    return context;
 }
 
 // Create the provider component to wrap the app around. This will provide the context to the app in parts where you will wrap it
@@ -60,7 +74,7 @@ export const AuthProvider = ({children}: {children: React.ReactNode}) => {
     
     return (
         <AuthContext.Provider value={value}>
-        {!loading && children}
+            {!loading && children}
         </AuthContext.Provider>
     )
     }
