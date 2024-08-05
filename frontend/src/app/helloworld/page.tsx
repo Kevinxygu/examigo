@@ -12,7 +12,7 @@ const HelloWorld = () => {
 
     // Fetch the message from the Flask API. helloworld is just to test and use as easter egg!
     useEffect(() => {
-        fetch(`${TESTING_API_URL}/helloworld`)
+        fetch('/api/helloworld')
             .then(response => response.json())
             .then(data => setFlaskMessage(data.message))
             .catch(error => alert("There was an error: " + error));

@@ -17,7 +17,7 @@ def login():
         data = request.json  # this is the payload from the user
         print("Logging in!")
         # TODO: Implement your login logic here.
-        return '<p>Login action</p>', 200
+        return jsonify(message="Logged in"), 200
     else:
         # Handle the GET request
         print("Displaying login page!")

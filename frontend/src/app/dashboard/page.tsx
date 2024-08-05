@@ -1,6 +1,5 @@
 'use client'
 import React, { useEffect } from "react";
-import { TESTING_API_URL } from "../../app/constants/constants";
 import { error } from "console";
 import * as Styled from "./Dashboard.styles";
 import Header from "../components/layout/Header";
@@ -34,12 +33,11 @@ const HelloWorld = () => {
 
     useEffect(() => {
         if (user) {
-        fetch(`${TESTING_API_URL}/problems`)
+        fetch(`/api/dashboard`)
             .then(response => response.json())
             .then(data => setQuestions(data.problems))
             .catch(error => alert("There was an error: " + error));
         } else {
-            // alert("You are not logged in")
             redirect("/auth/login")
         }
     }, []);

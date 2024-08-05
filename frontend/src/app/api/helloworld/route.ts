@@ -1,7 +1,9 @@
+// Testing route to the backend server
 import { NextResponse } from "next/server";
+import { TESTING_API_URL } from "@/app/constants/constants";
 
 export async function GET(request: Request) {
-  const res = await fetch('http://localhost:8000/helloworld', {
+  const res = await fetch(`${TESTING_API_URL}/helloworld`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -19,7 +21,7 @@ interface PostBody {
 
 export async function POST(request: Request) {
   const body: PostBody = await request.json();
-  const res = await fetch('http://localhost:8000/helloworld', {
+  const res = await fetch(`${TESTING_API_URL}/helloworld`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
