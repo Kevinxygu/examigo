@@ -1,17 +1,19 @@
 from flask import Blueprint, request, jsonify
+from datetime import datetime
+import pytz
 
 bp = Blueprint('helloworld', __name__, url_prefix='/helloworld')
 
-@bp.route('/', methods=['GET', 'POST', 'OPTIONS'])
+@bp.route('/', methods=['GET', 'POST'])
 def hello_world_ping_route():
-    if request.method == 'OPTIONS':
-            response = make_response()
-            response.headers.add('Access-Control-Allow-Origin', 'http://localhost:3000')
-            response.headers.add('Access-Control-Allow-Headers', 'Content-Type')
-            response.headers.add('Access-Control-Allow-Methods', 'GET,POST,OPTIONS')
-            return response
     if request.method == 'GET':
-        return jsonify(message="Hello World from Flask!"), 200
+        # Get PST
+        pst_timezone = pytz.timezone('Canada/Pacific')
+
+        # time now
+        pst_now = datetime.now(pytz.utc).astimezone(pst_timezone)
+
+        return jsonify(message="Hello World from Flask! It is currently " + pst_now.strftime('%Y-%m-%d %H:%M:%S %Z%z')), 200
     elif request.method == 'POST':
         data = request.json
         APINumber = data.get('number')

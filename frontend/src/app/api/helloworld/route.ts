@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 
 export async function GET(request: Request) {
   const res = await fetch('http://localhost:8000/helloworld', {
+    method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
