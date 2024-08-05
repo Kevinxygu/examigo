@@ -82,8 +82,17 @@ def get_problems():
 
 @bp.route('/generate', methods=['POST'])
 def create_problem():
-    # This route generates a new problem
-    data = request.json
-    # TODO Call the main generate function
-    print("Generated a problem!")
-    return jsonify({"generated_problems": "Generated something"}), 201
+    try:
+        # This route generates a new problem
+        data = request.json
+        # TODO Call the main generate function
+        pastedText = data.get('pastedText')
+        questionDescription = data.get('questionDescription')
+
+        pastedText = "YOU PASTED:" + pastedText
+        questionDescription = "DESCRIPTION:" + questionDescription
+
+        return jsonify(pastedText=pastedText,  questionDescription=questionDescription), 201
+    except Exception as e:
+        print(e)
+        return jsonify({"error: " + e}), 500
