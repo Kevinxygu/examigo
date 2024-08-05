@@ -65,6 +65,8 @@ const Generate: React.FC = () => {
         // This is the message that is sent from the Flask API
         alert(data.pastedText);
         alert(data.questionDescription);
+        alert(data.fileConfirmReceipt);
+        alert(data.tempMessage)
         
       } catch (error) {
       // Put an error here if it doesn't work
