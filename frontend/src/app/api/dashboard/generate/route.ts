@@ -2,12 +2,6 @@
 import { NextResponse } from "next/server";
 import { TESTING_API_URL } from "@/app/constants/constants";
 
-// interface type for the body of the request (TODO need to move to typescript types)
-// interface PostBody {
-//     pastedText: string;
-//     questionDescription: string;
-// }
-
 // export async function GET(request: Request) {
 //     const res = await fetch(`${TESTING_API_URL}/problems/generate`, {
 //     method: 'GET',
