@@ -1,5 +1,5 @@
 # problems.py file so API knows the routes for problem generation and retrieval
-
+import os
 from flask import Blueprint, request, jsonify
 
 bp = Blueprint('problems', __name__, url_prefix='/problems')
@@ -83,16 +83,37 @@ def get_problems():
 @bp.route('/generate', methods=['POST'])
 def create_problem():
     try:
-        # This route generates a new problem
-        data = request.json
+
         # TODO Call the main generate function
-        pastedText = data.get('pastedText')
-        questionDescription = data.get('questionDescription')
+        pastedText = request.form.get('pastedText')
+        questionDescription = request.form.get('questionDescription')
+
+        tempMessage = ""
+
+        # try reading values from temp to see if path is correct
+        tempFileName = 'helloworldtemp.txt'
+        tempFilePath = os.path.join('temp', tempFileName)
+        with open(tempFilePath, 'r') as f:
+            tempMessage = f.read()
+            
+
+        # Check the file upload
+        if 'uploadedFile' in request.files:
+            uploadedFile = request.files['uploadedFile']
+            if uploadedFile.filename != '':
+                # there is actually a file here
+                filename = uploadedFile.filename
+
+                uploadedFile.save(os.path.join('temp', filename))
+        
+            
+
 
         pastedText = "YOU PASTED:" + pastedText
         questionDescription = "DESCRIPTION:" + questionDescription
+        fileConfirmReceipt = f'File uploaded successfully: {uploadedFile.filename}' if 'uploadedFile' in request.files else 'No file uploaded'
 
-        return jsonify(pastedText=pastedText,  questionDescription=questionDescription), 201
+        return jsonify(pastedText=pastedText,  questionDescription=questionDescription, fileConfirmReceipt=fileConfirmReceipt, tempMessage=tempMessage), 201
     except Exception as e:
         print(e)
         return jsonify({"error: " + e}), 500

@@ -28,7 +28,7 @@ export const TextArea = styled.textarea`
 
 `;
 
-export const FileUploaderWrapper = styled.div`
+export const FileUpload = styled.input`
 
 `;
 
