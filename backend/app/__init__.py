@@ -2,7 +2,6 @@
 # Sets up database, registers the blueprints, and all the necessary extensions
 from routes import auth, problems, helloworld
 
-
 # Central set up point
 
 from flask import Flask
@@ -12,7 +11,7 @@ from flask_cors import CORS
 # Main initialization code for the backend server
 def create_app():
     app = Flask(__name__)
-    CORS(app) # Enable CORS
+    CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}}) # Enable CORS and enable sources from all origins
 
     # Initialize database (TODO)
 
