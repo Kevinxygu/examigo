@@ -98,6 +98,8 @@ def chainGenerate(pastedText, problemDescription, fileInput):
 
     chainOutput = result.content
 
+    print(chainOutput)
+
     # Output parser to match the response
     # json_schema = {
     #     "type": "object",
