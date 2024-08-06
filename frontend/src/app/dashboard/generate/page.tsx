@@ -3,6 +3,18 @@
 import React, {useState, useRef} from "react";
 import Header from "@/app/components/layout/Header";
 import * as Styled from "./Generate.styles";
+import { set } from "lodash";
+
+interface Question {
+  questionTitle: string;
+    question1: string;
+    question2: string;
+    question3: string;
+    question4: string;
+    question5: string;
+    correctAnswer: string;
+  }
+
 
 const Generate: React.FC = () => {
   // This tracks the steps we are at (TODO: think if we need this or not)
@@ -19,6 +31,9 @@ const Generate: React.FC = () => {
 
   // This is a reference to the file input element
   const fileInputRef = React.useRef<HTMLInputElement>(null);
+
+  // the list of problems that are generated
+  const [problems, setProblems] = useState<Question[] | null>([]);
 
   // handle the file selection + changes
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -67,6 +82,15 @@ const Generate: React.FC = () => {
         alert(data.questionDescription);
         alert(data.fileConfirmReceipt);
         alert(data.tempMessage)
+        // This is the JSON string that is generated from the Flask API
+        //alert();
+        console.log(data.generatedJSONString);
+
+        // Set the list to be the string
+        // TODO: Need to add in unhappy path
+        const questionsList = JSON.parse(data.generatedJSONString);
+        console.log(questionsList);
+        setProblems(questionsList);
         
       } catch (error) {
       // Put an error here if it doesn't work
@@ -116,6 +140,17 @@ const Generate: React.FC = () => {
         </Styled.Button>
         <Styled.Button onClick={handleGenerate}>Generate</Styled.Button>
       </Styled.ButtonWrapper>
+      {problems && problems.map((problem, index) => (
+      <div key={index}>
+        <h1>{problem.questionTitle}</h1>
+        <p>{problem.question1}</p>
+        <p>{problem.question2}</p>
+        <p>{problem.question3}</p>
+        <p>{problem.question4}</p>
+        <p>{problem.question5}</p>
+        <p>{problem.correctAnswer}</p>
+      </div>
+      ))}
     </Styled.Container>
     </>
   );

@@ -114,19 +114,28 @@ def create_problem():
         questionDescription = "DESCRIPTION:" + questionDescription
         fileConfirmReceipt = f'File uploaded successfully: {uploadedFile.filename}' if 'uploadedFile' in request.files else 'No file uploaded'
 
-        print(generateProblems(pastedText, questionDescription))
+        generatedJSONString = generateProblems(pastedText, questionDescription)
+        # print("""
+        #       -
+        #       -
+        #       -
+        #       -
+        #       -
+        #       -
+        #       Back Flask API now
+        # {}
+        # """)
+        print(generatedJSONString)
         print("""
-              -
-              -
-              -
-              -
-              -
-              -
-              Backn Flask API now
-        {}
-        """)
+            -  
+            -
+            -
+            -
+            -
+            this above should be the generated JSON string
+            """)
 
-        return jsonify(pastedText=pastedText,  questionDescription=questionDescription, fileConfirmReceipt=fileConfirmReceipt, tempMessage=tempMessage), 201
+        return jsonify(pastedText=pastedText,  questionDescription=questionDescription, fileConfirmReceipt=fileConfirmReceipt, tempMessage=tempMessage, generatedJSONString=generatedJSONString), 201
     except Exception as e:
         print(e)
         return jsonify({"error": e}), 500

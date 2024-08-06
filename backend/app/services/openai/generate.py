@@ -55,6 +55,7 @@ print(testEnvString)
     ]  
 }
 """
+# Returns a JSON-serializable STRING that represents the object data
 def generateProblems(pastedText="", problemDescription="", fileInput=None):
     output = chainGenerate(pastedText, problemDescription, fileInput)
     output = output.strip()
@@ -62,10 +63,12 @@ def generateProblems(pastedText="", problemDescription="", fileInput=None):
     finalString = output.replace('```json\n', '').replace('```', '').strip()
 
     # try and see if this works
+    # TESTING
     jsonData = json.loads(finalString)
 
     print(type(jsonData))
-    return jsonData
+    print("End of jsonData type")
+    return finalString
 
 
 # Inner function that generates the problem
