@@ -1,9 +1,10 @@
 # initialization file for configuring Flask application.
 # Sets up database, registers the blueprints, and all the necessary extensions
-from routes import auth, problems, helloworld
+from .routes import auth, problems, helloworld
+
+# from .services.openai.generate import generateProblems
 
 # Central set up point
-
 from flask import Flask
 from flask_cors import CORS
 
@@ -24,8 +25,3 @@ def create_app():
     """
 
     return app
-
-app = create_app()
-
-if __name__ == "__main__":
-    app.run(port=8000, debug=True)

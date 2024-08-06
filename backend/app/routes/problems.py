@@ -2,6 +2,7 @@
 import os
 from flask import Blueprint, request, jsonify
 
+from ..services.openai.generate import generateProblems
 bp = Blueprint('problems', __name__, url_prefix='/problems')
 
 @bp.route('/', methods=['GET'])
@@ -92,7 +93,7 @@ def create_problem():
 
         # try reading values from temp to see if path is correct
         tempFileName = 'helloworldtemp.txt'
-        tempFilePath = os.path.join('temp', tempFileName)
+        tempFilePath = os.path.join('app/temp', tempFileName)
         with open(tempFilePath, 'r') as f:
             tempMessage = f.read()
             
@@ -104,7 +105,7 @@ def create_problem():
                 # there is actually a file here
                 filename = uploadedFile.filename
 
-                uploadedFile.save(os.path.join('temp', filename))
+                uploadedFile.save(os.path.join('app/temp', filename))
         
             
 
@@ -113,7 +114,19 @@ def create_problem():
         questionDescription = "DESCRIPTION:" + questionDescription
         fileConfirmReceipt = f'File uploaded successfully: {uploadedFile.filename}' if 'uploadedFile' in request.files else 'No file uploaded'
 
+        print(generateProblems(pastedText, questionDescription))
+        print("""
+              -
+              -
+              -
+              -
+              -
+              -
+              Backn Flask API now
+        {}
+        """)
+
         return jsonify(pastedText=pastedText,  questionDescription=questionDescription, fileConfirmReceipt=fileConfirmReceipt, tempMessage=tempMessage), 201
     except Exception as e:
         print(e)
-        return jsonify({"error: " + e}), 500
+        return jsonify({"error": e}), 500
