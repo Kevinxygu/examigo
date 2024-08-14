@@ -98,7 +98,7 @@ def chainGenerate(pastedText, problemDescription, fileInput):
 
     chainOutput = result.content
 
-    print(chainOutput)
+    # print(chainOutput)
 
     # Output parser to match the response
     # json_schema = {
@@ -200,20 +200,20 @@ def chainGenerate(pastedText, problemDescription, fileInput):
 
     # print(questions)
 
-    print(questions.content)
+    # print(questions.content)
 
-    print("""
-          ^
-          ^
-          ^
-          ^
-          ^
-          ^
-          This is the output of the questions chain
-          """)
+    # print("""
+    #       ^
+    #       ^
+    #       ^
+    #       ^
+    #       ^
+    #       ^
+    #       This is the output of the questions chain
+    #       """)
     
-    print("Type of questions.content is:")
-    print(type(questions.content))
+    # print("Type of questions.content is:")
+    # print(type(questions.content))
 
     # questionsDict = output_parser.parse(questions.content)
     #print(questionsDict)
