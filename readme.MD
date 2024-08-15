@@ -25,7 +25,7 @@ This was the most technically complex project I built, but in my eyes also the m
 | Concept | Learnings |
 |:---|:---|
 | User Interviews | Will write soon, TLDR I did a LOT of user interviews and had to re-adjust my questions and conversations several times. |
-| Consider Legal | Will write soon, TLDR I talked with teachers to get the green light on the project and consider any pitfalls I could fall into inadvertently around university copyrighting, regulations. |
+| Legal | Will write soon, TLDR I talked with teachers to get the green light on the project and consider any pitfalls I could fall into inadvertently around university copyrighting, regulations. |
 | Challenging Assumptions | Will write soon, TLDR I went back to Square One several times to re-consider: a.) Is this what users want? b.) Am I prescribing this as "the solution" based on my individual bias? c.) How is this reflected in what users are saying? Overall, I wanted to practice defining the "product" vision, evaluating how it lines up with what users are saying, and pivoting if needed. |
 | Design and Figma | Will write soon, TLDR I learned to take inspirations from good UIs that matched up with my use case. I took inspiration from sites like Quizlet, Khan Academy, Brilliant.org|
 
