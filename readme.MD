@@ -4,11 +4,9 @@ Examigo generates practice problems from class notes.
 
 ## :book: Learnings
 
-This was the most technically complex project I built, but in my eyes also the most impactful for a.) those around me and b.) my learning and experiences as an engineer. I REALLY wanted to dive into the deep end here. Get uncomfortable. Learn a BUNCH of new things. You'll notice the list of learnings I have below is REALLY long, and I'm proud of that.
+This was the most technically complex project I built, but in my eyes also the most impactful for a.) those around me and b.) my learning and experiences as an engineer. I REALLY wanted to dive into the deep end here. Get uncomfortable. Learn a BUNCH of new things. You'll notice the list of learnings I have below is REALLY long, so I split it up into two parts: Technical Learnings and Soft Skill Learnings.
 
-The list is really long, so I split it up into two parts. Technical Learnings and Soft Skill Learnings
-
-## :laptop: Technical Learnings
+## :computer: Technical Learnings
 
 | Concept | Learnings |
 |:---|:---|
