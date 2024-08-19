@@ -73,7 +73,7 @@ const Login  = () => {
         
               <Styled.LoginButton onClick={handleLogin}>Login</Styled.LoginButton>
               <Styled.LogoutButton onClick={handleLogout}>Logout</Styled.LogoutButton>
-              <Styled.GoogleButton onClick={handleGoogleSignIn}>Logout</Styled.GoogleButton>
+              <Styled.GoogleButton onClick={handleGoogleSignIn}>Sign In with Google</Styled.GoogleButton>
 
             </Styled.LoginContainer>
           </>

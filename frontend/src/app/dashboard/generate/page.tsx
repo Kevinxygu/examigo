@@ -3,8 +3,8 @@
 import React, {useState, useRef} from "react";
 import Header from "@/app/components/layout/Header";
 import * as Styled from "./Generate.styles";
-import { set } from "lodash";
 
+// Define the interface for the question
 interface Question {
   questionTitle: string;
     question1: string;
@@ -15,25 +15,16 @@ interface Question {
     correctAnswer: string;
   }
 
-
 const Generate: React.FC = () => {
-  // This tracks the steps we are at (TODO: think if we need this or not)
-  const [stepNumber, setStepNumber] = useState<number>(0);
+  // states for this component
+  const [stepNumber, setStepNumber] = useState<number>(0); // This tracks the steps we are at (TODO: think if we need this or not)
+  const [pastedText, setPastedText] = useState<string>(''); // pastedText is the text that the user pastes into the text area
+  const [questionDescription, setQuestionDescription] = useState<string>(''); // questionDescription is the description of the questions that the user wants to generate
+  const [uploadedFile, setUploadedFile] = useState<File | null>(null); // file uploaded by the user
+  const [problems, setProblems] = useState<Question[] | null>([]); // This is the list of problems that are generated
 
-  // pastedText is the text that the user pastes into the text area
-  const [pastedText, setPastedText] = useState<string>('');
-
-  // questionDescription is the description of the questions that the user wants to generate
-  const [questionDescription, setQuestionDescription] = useState<string>('');
-
-  // file uploaded by the user
-  const [uploadedFile, setUploadedFile] = useState<File | null>(null);
-
-  // This is a reference to the file input element
+  // This is the reference to the file input element
   const fileInputRef = React.useRef<HTMLInputElement>(null);
-
-  // the list of problems that are generated
-  const [problems, setProblems] = useState<Question[] | null>([]);
 
   // handle the file selection + changes
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -59,6 +50,7 @@ const Generate: React.FC = () => {
       generateBody.append('uploadedFile', uploadedFile);
     }
 
+    // This is the fetch request that is being sent to the Flask API
     try {
       const response = await fetch('/api/dashboard/generate', {
         // This is a POST request
