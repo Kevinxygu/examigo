@@ -28,6 +28,7 @@ const Generate: React.FC = () => {
 
   // handle the file selection + changes
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    // Check if the file exists
     if (event.target.files && event.target.files[0]) {
       setUploadedFile(event.target.files[0]);
     }
@@ -37,6 +38,9 @@ const Generate: React.FC = () => {
   const handleGenerate = async(event: React.FormEvent) => {
     // event.preventDefault() is used to prevent the default behavior of the form (which can cause refreshes for example)
     event.preventDefault();
+
+    // Upload the state to change the screen
+    setStepNumber(1);
 
     // Refactor body to include formdata. This will be the body of the POST request
     const generateBody = new FormData();
@@ -83,6 +87,7 @@ const Generate: React.FC = () => {
         const questionsList = JSON.parse(data.generatedJSONString);
         console.log(questionsList);
         setProblems(questionsList);
+        setStepNumber(2);
         
       } catch (error) {
       // Put an error here if it doesn't work
@@ -133,7 +138,7 @@ const Generate: React.FC = () => {
         </Styled.Button>
         <Styled.Button onClick={handleGenerate}>Generate</Styled.Button>
       </Styled.ButtonWrapper>
-      {problems && problems.map((problem, index) => (
+      {/* {problems && problems.map((problem, index) => (
       <div key={index}>
         <h1>{problem.questionTitle}</h1>
         <p>{problem.question1}</p>
@@ -143,7 +148,7 @@ const Generate: React.FC = () => {
         <p>{problem.question5}</p>
         <p>{problem.correctAnswer}</p>
       </div>
-      ))}
+      ))} */}
     </Styled.Container>
     </>
   );
@@ -162,7 +167,33 @@ const Generate: React.FC = () => {
     </>
   );
 
-  return stepTwo;
+  const stepThree = (
+    <>
+    <Header />
+    <Styled.threeTitle>
+      Here are the questions we generated for you!
+    </Styled.threeTitle>
+    {problems && problems.map((problem, index) => (
+      <div key={index}>
+        <h1>{problem.questionTitle}</h1>
+        <p>{problem.question1}</p>
+        <p>{problem.question2}</p>
+        <p>{problem.question3}</p>
+        <p>{problem.question4}</p>
+        <p>{problem.question5}</p>
+        <p>{problem.correctAnswer}</p>
+      </div>
+      ))}
+    </>
+  )
+
+  return (
+    <>
+      {stepNumber === 0 && stepOne}
+      {stepNumber === 1 && stepTwo}
+      {stepNumber === 2 && stepThree}
+    </>
+  );
 };
 
 export default Generate;

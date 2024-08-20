@@ -46,3 +46,6 @@ export const twoTitle = styled.h1`
 export const twoImage = styled.img`
 
 `;
+
+export const threeTitle = styled.h1`  
+`;
