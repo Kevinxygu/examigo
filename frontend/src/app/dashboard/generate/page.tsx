@@ -90,7 +90,8 @@ const Generate: React.FC = () => {
       }
   };
 
-  return (
+  // Step One: include the component with the input fields to show
+  const stepOne = (
     <>
     <Header />
     <Styled.Container>
@@ -146,6 +147,22 @@ const Generate: React.FC = () => {
     </Styled.Container>
     </>
   );
+
+  const stepTwo = (
+    <>
+    <Header />
+    <Styled.Container>
+      <Styled.CardWrapper>
+        <Styled.twoTitle>
+          Cooking...
+          <Styled.twoImage src="/images/cooking-kirby.gif"></Styled.twoImage>
+        </Styled.twoTitle>
+      </Styled.CardWrapper>
+    </Styled.Container>
+    </>
+  );
+
+  return stepTwo;
 };
 
 export default Generate;

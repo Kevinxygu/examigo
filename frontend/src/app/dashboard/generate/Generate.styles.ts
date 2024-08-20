@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Link from "next/link";
 
 export const Container = styled.div`
   display: flex;
@@ -22,7 +21,7 @@ export const CardWrapper = styled.div`
 
 export const label = styled.label`
 
-`
+`;
 
 export const TextArea = styled.textarea`
 
@@ -37,5 +36,13 @@ export const Button = styled.button`
 `;
 
 export const ButtonWrapper = styled.div`
+
+`;
+
+export const twoTitle = styled.h1`
+  
+`;
+
+export const twoImage = styled.img`
 
 `;
