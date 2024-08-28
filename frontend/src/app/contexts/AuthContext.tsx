@@ -9,6 +9,7 @@ import { app } from "../config/configAuth";
 import { User } from "firebase/auth";
 
 // Sign in with Google functionality
+// TODO: need to move this to the backend
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 // Define the types for the context
