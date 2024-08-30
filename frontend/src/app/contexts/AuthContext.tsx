@@ -25,6 +25,7 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 // Create a hook to use the context
+// TODO: consider moving to hooks folder
 export const useAuth = (): AuthContextType => {
     // get the context here
     const context = useContext(AuthContext);
