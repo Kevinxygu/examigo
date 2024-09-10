@@ -125,6 +125,7 @@ const Generate: React.FC = () => {
         <Styled.label>File from computer</Styled.label>
 
           <p>Supported file types: pdf, jpg</p>
+          
           <Styled.FileUpload type='file'
             accept='.pdf,.jpg,.jpeg,.png'
             onChange={handleFileChange}
