@@ -12,7 +12,7 @@ This was the most technically complex project I built, but in my eyes also the m
 |:---|:---|
 | [LangChain](https://www.langchain.com/) | Will write soon, but TLDR very cool. helped me learn more about AI.|
 | [Prompt Engineering](https://platform.openai.com/docs/guides/prompt-engineering) | Will write soon, TLDR also very cool and I learned a lot from really cracked AI + ML engineers and researchers.|
-| [Flask](https://flask.palletsprojects.com/en/3.0.x/) | Will write soon, TLDR i liked using it. |
+| [Flask](https://flask.palletsprojects.com/en/3.0.x/) | Will write soon, TLDR i liked using it. Was going to use [Express](https://expressjs.com/) but I wanted to challenge myself by using a tech stack with multiple languages. |
 | Databases | Will write soon, TLDR first time i went and implemented the schema on my own.|
 | APIs | Will write soon, TLDR I solidified core concepts like endpoints, requests, etc. |
 | Healthy Coding Practices | Will write soon, TLDR I coded cleaner and safer. |
