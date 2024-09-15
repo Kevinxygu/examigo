@@ -30,4 +30,4 @@ This was the most technically complex project I built, but in my eyes also the m
 | [Design and Figma](https://www.figma.com/design/) | Will write soon, TLDR I learned to take inspirations from good UIs that matched up with my use case. I took inspiration from sites like Quizlet, Khan Academy, Brilliant.org|
 
 ## :city_sunrise: Future Features + Considerations
-[Aug 15] - A LOT OF THEM ARE COMING SOON!!! Will write about it later :)
+[Summer 2024] - A LOT OF THEM ARE COMING SOON!!! Will write about it later :)
