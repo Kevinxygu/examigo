@@ -24,12 +24,13 @@ from langchain.chains.router import MultiPromptChain
 from langchain.prompts import PromptTemplate
 
 # Global variables
-_MODEL_ = 'gpt-4o'
+_MODEL_ = 'llama'
 
 # Initialization code
 _ = load_dotenv(find_dotenv()) # read the local .env file
 openai.api_key = os.environ["OPENAI_API_KEY"]
 
+# TODO need to remove afterwards
 testEnvString = os.environ["TEST_ENV"] # just to test if the .env file is working
 print(testEnvString)
 

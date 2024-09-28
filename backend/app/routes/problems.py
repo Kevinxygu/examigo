@@ -115,16 +115,6 @@ def create_problem():
         fileConfirmReceipt = f'File uploaded successfully: {uploadedFile.filename}' if 'uploadedFile' in request.files else 'No file uploaded'
 
         generatedJSONString = generateProblems(pastedText, questionDescription)
-        # print("""
-        #       -
-        #       -
-        #       -
-        #       -
-        #       -
-        #       -
-        #       Back Flask API now
-        # {}
-        # """)
         print(generatedJSONString)
         print("""
             -  
