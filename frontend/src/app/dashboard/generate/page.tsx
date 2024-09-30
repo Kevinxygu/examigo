@@ -3,6 +3,7 @@
 import React, {useState, useRef} from "react";
 import Header from "@/app/components/layout/Header";
 import * as Styled from "./Generate.styles";
+import Question from "@/app/components/generate/Question";
 
 // Define the interface for the question
 interface Question {
@@ -175,15 +176,17 @@ const Generate: React.FC = () => {
       Here are the questions we generated for you!
     </Styled.threeTitle>
     {problems && problems.map((problem, index) => (
-      <div key={index}>
-        <h1>{problem.questionTitle}</h1>
-        <p>{problem.question1}</p>
-        <p>{problem.question2}</p>
-        <p>{problem.question3}</p>
-        <p>{problem.question4}</p>
-        <p>{problem.question5}</p>
-        <p>{problem.correctAnswer}</p>
-      </div>
+      // TODO: Issue 19, needs to be refactored to a separate component
+      <Question key={index} title={problem.questionTitle} q1={problem.question1} q2={problem.question2} q3={problem.question3} q4={problem.question4} q5={problem.question5} correct={problem.correctAnswer} />
+      // <div key={index}>
+      //   <h1>{problem.questionTitle}</h1>
+      //   <p>{problem.question1}</p>
+      //   <p>{problem.question2}</p>
+      //   <p>{problem.question3}</p>
+      //   <p>{problem.question4}</p>
+      //   <p>{problem.question5}</p>
+      //   <p>{problem.correctAnswer}</p>
+      // </div>
       ))}
     </>
   )
