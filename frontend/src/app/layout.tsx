@@ -5,6 +5,7 @@ import { AuthProvider } from "./contexts/AuthContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
+// This is the layout for the entire app. It wraps around all the pages and components
 export const metadata: Metadata = {
   title: "Examigo",
   description: "I'm workin' here!!!",
@@ -18,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        {/* Auth provider  */}
         <AuthProvider >
           {children}
         </AuthProvider>
