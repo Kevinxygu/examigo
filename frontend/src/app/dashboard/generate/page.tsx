@@ -106,7 +106,7 @@ const Generate: React.FC = () => {
       </Styled.InputSelector>
       
       <Styled.InstructionText>
-        Fill out at least one of the fields below. We'll do the rest.
+        Fill out at least one of the fields below. We&apos;ll do the rest.
       </Styled.InstructionText>
 
       <Styled.label>Paste text</Styled.label>
