@@ -19,6 +19,10 @@ This was the most technically complex project I built (as of Summer 2024), but i
 | Effective AI Usage | Will write soon, TLDR I learned how to use Claude and ChatGPT well. |
 | [TypeScript](https://www.typescriptlang.org/) | Will write soon, TLDR I started using more features of TS after learning the fundamentals.|
 | [Python](https://www.python.org/) | Will write soon, TLDR I learned how to use Python as part of a multi-language codebase.|
+| [PostgreSQL](https://www.postgresql.org/) | Will write soon, TLDR databases yay!|
+| [LLAMAs](https://www.llama.com/) | Will write soon, TLDR LLAMAs are quite cool.|
+
+
 
 ## :coffee: Soft Skill Learnings
 
